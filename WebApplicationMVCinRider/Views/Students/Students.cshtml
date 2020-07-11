@@ -1,0 +1,35 @@
+﻿@page
+@model WebApplicationMVCinRider.Controllers.Students
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <div class="align-content-center" style="align-self: center" id="divStudents">
+        <table class="alert-dark">
+            @{ var dataOfStudents = ViewBag.Message; }
+            @foreach (var student in dataOfStudents)
+            {
+                <td>
+                    <tr>
+                        @student.FirstName
+                    </tr>
+                    <th>
+                        @student.LastName
+                    </th>
+                </td>
+            }
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
