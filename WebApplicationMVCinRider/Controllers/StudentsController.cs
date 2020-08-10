@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +29,11 @@ namespace WebApplicationMVCinRider.Controllers
             _students.LastName = "b";
 
             return _students;
+        }
+
+        protected void btnAddNewStudent_onclick(EventArgs e)
+        {
+            AddStudents();
         }
     }
 }

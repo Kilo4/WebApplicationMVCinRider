@@ -2,9 +2,8 @@
 @model WebApplicationMVCinRider.Controllers.Students
 
 @{
-    Layout = null;
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -12,24 +11,30 @@
     <title></title>
 </head>
 <body>
-<div>
-    <div class="align-content-center" style="align-self: center" id="divStudents">
-        <table class="alert-dark">
-            @{ var dataOfStudents = ViewBag.Message; }
-            @foreach (var student in dataOfStudents)
-            {
-                <td>
+    <div class="row">
+        <div class="col-sm-6" style="background-color: aqua">
+            <button id="AddNewStudent" onclick="btnAddNewStudent_onclick()" style="width: 42px; height: 24px">Click me!</button>
+            <input type="button" value="Go Somewhere Else" onclick="location.href='<%: Url.Action(" Action", "StudentsController" ) %>'" />
+        </div>
+        <div class="col-sm-6" style="align-self: center; background-color: red" id="divStudents">
+            <table class="alert-dark">
+                @{ var dataOfStudents = ViewBag.Message; }
+                @foreach (var student in dataOfStudents)
+                {
+                    <td>
                     <tr>
                         @student.FirstName
                     </tr>
                     <th>
                         @student.LastName
                     </th>
-                </td>
-            }
-        </table>
+                    </td>
+                }
+            </table>
+        </div>
 
     </div>
-</div>
+    <div>
+    </div>
 </body>
 </html>
